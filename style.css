@@ -149,6 +149,9 @@ body {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
+
+  position: relative;
+  z-index: 20;
 }
 
 .hero-image {
@@ -157,6 +160,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 1;
 }
 
 .hero-image img {
@@ -175,9 +180,19 @@ body {
   position: absolute;
   opacity: 0.18;
   border-radius: 50%;
+
+  pointer-events: none;
 }
 
-/* ================= RESPONSIVE ================= */
+.btn-primary,
+.btn-secondary {
+  position: relative;
+  z-index: 30;
+}
+
+/* ================= RESPONSIVE HERO ================= */
+
+/* ================= RESPONSIVE HERO ================= */
 
 @media (max-width: 992px) {
   .hero {
@@ -209,14 +224,14 @@ body {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .hero-text h1 {
-    font-size: 42px;
+    font-size: 40px !important;
     line-height: 1.15;
   }
 
   .hero-text p {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .hero-tag {
@@ -225,7 +240,7 @@ body {
   }
 
   .hero-image img {
-    max-width: 100%;
+    max-width: 50%;
   }
 }
 
@@ -369,11 +384,14 @@ body {
   letter-spacing: 1px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE COUNTDOWN SECTION ================= */
 
 @media (max-width: 768px) {
+  .countdown-section {
+    padding: 30px 0;
+  }
   .countdown-wrapper {
-    padding: 60px 25px;
+    padding: 20px 25px;
   }
 
   .countdown-wrapper h2 {
@@ -391,6 +409,9 @@ body {
 }
 
 @media (max-width: 576px) {
+  .countdown-wrapper {
+    width: auto;
+  }
   .countdown-wrapper h2 {
     font-size: 32px;
   }
@@ -400,19 +421,23 @@ body {
   }
 
   .time-box {
-    width: 110px;
-    height: 110px;
+    width: 80px;
+    height: 80px;
   }
 
   .time-box h3 {
-    font-size: 34px;
+    font-size: 20px;
+  }
+
+  .time-box span {
+    font-size: 10px;
   }
 }
 
 /* ================= FEATURES ================= */
 
 .features {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .features-wrapper {
@@ -450,77 +475,184 @@ body {
   line-height: 1.7;
 }
 
-/* ================= SECTION TITLE ================= */
+/* ================= RESPONSIVE FEATURES ================= */
+
+@media screen and (max-width: 768px) {
+  .features {
+    padding: 30px 0;
+  }
+
+  .features-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .feature-card i {
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+
+  .feature-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* ================= SECTION TITLE PRODUCT ================= */
 
 .section-title {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 }
 
 .section-title span {
   color: #a6a300;
+
   letter-spacing: 2px;
+
   font-size: 14px;
+
+  font-weight: 600;
 }
 
 .section-title h2 {
-  font-size: 52px;
-  margin-top: 10px;
+  font-size: 58px;
+
+  margin-top: 12px;
+
+  color: white;
+
+  font-weight: 800;
 }
+
+/* ===== RESPONSIVE SECTION TITLE ===== */
 
 /* ================= PRODUCTS ================= */
 
 .products {
-  padding: 120px 0;
+  padding: 10px 0;
   background: #050505;
 }
 
 .products-wrapper {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 30px;
 }
 
 /* ================= PRODUCT CARD ================= */
 
 .product-card {
-  background: linear-gradient(180deg, #111111, #0a0a0a);
-
-  border-radius: 28px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(166, 163, 0, 0.12);
-
-  transition: 0.35s ease;
-
   position: relative;
 }
 
-.product-card:hover {
-  transform: translateY(-10px);
+/* ================= STATUS BADGE ================= */
 
-  border-color: rgba(166, 163, 0, 0.35);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.35),
-    0 0 30px rgba(166, 163, 0, 0.08);
+.status-badge {
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 0px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: white;
 }
 
+/* OPEN PO */
+
+.open-po {
+  background: #22c55e;
+  color: black;
+}
+
+/* CLOSED PO */
+
+.closed-po {
+  background: #ef4444;
+}
+
+/* COMING SOON */
+
+.coming-soon {
+  background: #525252;
+}
+
+/* SOLD OUT */
+
+.sold-out {
+  background: #f97316;
+}
+/* ================= RESPONSIVE MOBILE STATUS BADGE ================= */
+.status-badge {
+  display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.signature-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 10;
+
+  background: #a6a300;
+  color: black;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  box-shadow: 0 10px 25px rgba(166, 163, 0, 0.25);
+}
+
+.bestseller-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 10;
+
+  background: #a6a300;
+  color: black;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  box-shadow: 0 10px 25px rgba(166, 163, 0, 0.25);
+}
 /* ================= IMAGE ================= */
 
 .product-card img {
   width: 100%;
-
-  height: 400px;
-
+  height: 250px;
   object-fit: contain;
-
   background: #050505;
-
   padding: 15px;
+  display: block;
 }
 
 .product-card:hover img {
@@ -534,12 +666,10 @@ body {
 }
 
 .product-content h3 {
+  margin-top: 0;
   font-size: 24px;
-
   font-weight: 700;
-
   margin-bottom: 10px;
-
   color: white;
 }
 
@@ -647,34 +777,6 @@ body {
   box-shadow: 0 0 25px rgba(166, 163, 0, 0.35);
 }
 
-/* ================= SECTION TITLE ================= */
-
-.section-title {
-  text-align: center;
-
-  margin-bottom: 70px;
-}
-
-.section-title span {
-  color: #a6a300;
-
-  letter-spacing: 2px;
-
-  font-size: 14px;
-
-  font-weight: 600;
-}
-
-.section-title h2 {
-  font-size: 58px;
-
-  margin-top: 12px;
-
-  color: white;
-
-  font-weight: 800;
-}
-
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1400px) {
@@ -683,67 +785,79 @@ body {
   }
 }
 
-@media (max-width: 992px) {
-  .products {
-    padding: 100px 0;
-  }
+/* ================= MOBILE MENU GRID ================= */
 
+@media screen and (max-width: 768px) {
   .products-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 0 10px;
   }
 
-  .section-title h2 {
-    font-size: 46px;
-  }
-}
-
-@media (max-width: 576px) {
-  .products-wrapper {
-    grid-template-columns: 1fr;
+  .product-card {
+    overflow: hidden;
+    border-radius: 16px;
   }
 
-  .section-title h2 {
-    font-size: 36px;
+  .product-card img {
+    width: 100%;
+    height: 150px !important;
+    object-fit: contain;
+    padding: 6px;
+  }
+
+  .product-content {
+    padding: 10px;
   }
 
   .product-content h3 {
-    font-size: 22px;
+    font-size: 15px !important;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .product-protein {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  .macro-wrapper {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .macro-box {
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .macro-box span {
+    font-size: 9px;
+  }
+
+  .macro-box h4 {
+    font-size: 10px;
+    margin-top: 3px;
   }
 
   .product-price {
-    font-size: 28px;
+    font-size: 15px !important;
+    margin-bottom: 10px;
   }
-}
 
-/* ================= NUTRITION ================= */
+  .btn-product {
+    height: 30px;
+    font-size: 12px;
+  }
 
-.nutrition {
-  padding: 120px 0;
-}
-
-.nutrition-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-.nutrition-card {
-  background: #0d0d0d;
-  border-radius: 25px;
-  padding: 45px 20px;
-  text-align: center;
-  border: 1px solid rgba(166, 163, 0, 0.12);
-}
-
-.nutrition-card h3 {
-  font-size: 56px;
-  color: #a6a300;
-  margin-bottom: 10px;
-}
-
-.nutrition-card span {
-  color: #d5d5d5;
-  font-size: 18px;
+  .signature-badge,
+  .bestseller-badge {
+    top: 8px;
+    left: 8px;
+    font-size: 8px;
+    padding: 4px 8px;
+  }
 }
 
 /* ================= ABOUT ================= */
@@ -787,6 +901,38 @@ body {
   margin-bottom: 25px;
 }
 
+/* ================= RESPONSIVE ABOUT ================= */
+@media (max-width: 768px) {
+  .about-image img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .about {
+    padding: 5px;
+  }
+
+  .about-text {
+    flex: 10;
+  }
+
+  .about-text span {
+    color: #a6a300;
+    letter-spacing: 2px;
+  }
+
+  .about-text h2 {
+    font-size: 100px;
+    margin: 20px 0;
+  }
+
+  .about-text p {
+    color: #cfcfcf;
+    line-height: 1.9;
+    margin-bottom: 25px;
+  }
+}
+
 /* ================= CONTACT ================= */
 
 .contact {
@@ -805,6 +951,8 @@ body {
   padding: 45px 30px;
   text-align: center;
   border: 1px solid rgba(166, 163, 0, 0.12);
+  text-decoration: none;
+  color: white;
 }
 
 .contact-card:nth-child(1) i {
@@ -837,6 +985,37 @@ body {
   color: #d0d0d0;
 }
 
+/* ===== RESPONSIVE CONTACT ===== */
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .contact-card i {
+    font-size: 32px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .contact-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+  }
+}
+
 /* ================= FOOTER ================= */
 
 .footer {
@@ -845,7 +1024,13 @@ body {
   text-align: center;
   color: #cfcfcf;
 }
-
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 24px 16px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
 /* ================= FLOATING WA ================= */
 
 .floating-wa {

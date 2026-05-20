@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Dimsum Original",
+    "image": "images/menuori.png",
+    "protein": "56G",
+    "carbs": "43G",
+    "fat": "12G",
+    "calories": "560",
+    "price": "30.000",
+    "description": "Estimated Nutrition per 8pcs",
+    "status": "OPEN PO",
+    "signature": true
+  },
+
+  {
+    "name": "Dimsum Cheese",
+    "image": "images/menucheese.png",
+    "protein": "59G",
+    "carbs": "50G",
+    "fat": "29G",
+    "calories": "760",
+    "price": "32.000",
+    "description": "Estimated Nutrition per 8pcs",
+    "signature": false,
+    "bestseller": true,
+    "status": "OPEN PO"
+  },
+
+  {
+    "name": "???",
+    "image": "images/menusoon.png",
+    "protein": "??G",
+    "carbs": "??G",
+    "fat": "??G",
+    "calories": "???",
+    "price": "??.???",
+    "description": "Coming Soon",
+    "signature": false,
+    "status": "COMING SOON"
+  },
+
+  {
+    "name": "???",
+    "image": "images/menusoon.png",
+    "protein": "??G",
+    "carbs": "??G",
+    "fat": "??G",
+    "calories": "???",
+    "price": "??.???",
+    "description": "Coming Soon",
+    "status": "COMING SOON"
+  }
+]

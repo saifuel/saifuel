@@ -1,3 +1,6 @@
+const waGeneral =
+  "https://wa.me/6283890272210?text=Halo%20Admin%20Saifuel%20👋%0ASaya%20ingin%20order%20menu%20high%20protein.%0ABoleh%20minta%20menu%20dan%20price%20listnya?";
+
 // ================= NAVBAR SHADOW ON SCROLL =================
 
 const navbar = document.querySelector(".navbar");
@@ -135,3 +138,146 @@ const floatingWA = document.querySelector(".floating-wa");
 setInterval(() => {
   floatingWA.classList.toggle("pulse");
 }, 1200);
+
+// ================= JSON PRODUCTS =================
+
+const productsWrapper = document.getElementById("productsWrapper");
+
+fetch("products.json")
+  .then((response) => response.json())
+  .then((products) => {
+    products.forEach((product) => {
+      const card = `
+
+      <div class="product-card">
+
+        ${
+          product.signature
+            ? `
+          <div class="signature-badge">
+            SIGNATURE
+          </div>
+          `
+            : ""
+        }
+
+         ${
+           product.bestseller
+             ? `
+          <div class="bestseller-badge">
+            BESTSELLER
+          </div>
+          `
+             : ""
+         }
+
+        <img src="${product.image}" alt="${product.name}" />
+
+         ${
+           product.status
+             ? `
+                  <div class="status-badge ${product.status
+                    .toLowerCase()
+                    .replace(" ", "-")}">
+                    ${product.status}
+                  </div>
+                  `
+             : ""
+         }
+
+        <div class="product-content">
+
+          <h3>${product.name}</h3>
+
+          <div class="product-protein">
+            ${product.description}
+          </div>
+
+          <div class="macro-wrapper">
+
+            <div class="macro-box">
+              <span>Protein</span>
+              <h4>${product.protein}</h4>
+            </div>
+
+            <div class="macro-box">
+              <span>Carbs</span>
+              <h4>${product.carbs}</h4>
+            </div>
+
+            <div class="macro-box">
+              <span>Fat</span>
+              <h4>${product.fat}</h4>
+            </div>
+
+            <div class="macro-box">
+              <span>Calories</span>
+              <h4>${product.calories}</h4>
+            </div>
+
+          </div>
+
+          <div class="product-price">
+            Rp ${product.price}
+          </div>
+
+          ${
+            product.status === "OPEN PO"
+              ? `
+            <a
+              href="https://wa.me/6283890272210?text=${encodeURIComponent(
+                `Halo admin Saifuel 👋
+        Saya ingin order menu berikut:
+
+        ━━━━━━━━━━━━━━━
+        🍱 Menu : ${product.name}
+        💪 Protein : ${product.protein}
+        🔥 Calories : ${product.calories}
+        💰 Harga : Rp ${product.price}
+        ━━━━━━━━━━━━━━━
+
+        Qty :
+
+        Nama :
+        Alamat :
+        `,
+              )}"
+              class="btn-product"
+              target="_blank"
+            >
+              Order Now
+            </a>
+            `
+              : `
+            <button class="btn-product disabled-btn">
+              ${product.status}
+            </button>
+            `
+          }
+
+        </div>
+
+      </div>
+
+      `;
+
+      productsWrapper.innerHTML += card;
+    });
+  });
+
+// ================= AUTO KE ISI TEKS WA pada button order now =================
+const navbarOrder = document.getElementById("navbar-order");
+
+navbarOrder.href = waGeneral;
+
+const heroOrder = document.getElementById("hero-order");
+
+heroOrder.href = waGeneral;
+
+const countdownOrder = document.getElementById("countdown-order");
+
+countdownOrder.href = waGeneral;
+
+const floatingOrder = document.getElementById("floating-order");
+
+floatingOrder.href = waGeneral;
