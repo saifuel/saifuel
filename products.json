@@ -1,6 +1,6 @@
 [
   {
-    "name": "Dimsum Original",
+    "name": "Dimsum Original Frozen",
     "image": "images/menuori.png",
     "protein": "56G",
     "carbs": "43G",
@@ -13,7 +13,7 @@
   },
 
   {
-    "name": "Dimsum Cheese",
+    "name": "Dimsum Cheese Frozen",
     "image": "images/menucheese.png",
     "protein": "59G",
     "carbs": "50G",

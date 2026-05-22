@@ -76,12 +76,12 @@ window.addEventListener("mousemove", (e) => {
 
 // ================= COUNTDOWN TIMER =================
 
-// SET TANGGAL CLOSE PO
-// FORMAT: YEAR, MONTH-1, DAY, HOUR, MINUTE
+// SET 24 JAM DARI SEKARANG
 
-const countdownDate = new Date(2026, 4, 25, 23, 59, 59).getTime();
+const countdownDate = new Date().getTime() + (24 * 60 * 60 * 1000);
 
 const countdown = setInterval(() => {
+
   const now = new Date().getTime();
 
   const distance = countdownDate - now;
@@ -91,12 +91,16 @@ const countdown = setInterval(() => {
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
   const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
 
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60)) / (1000 * 60)
+  );
 
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const seconds = Math.floor(
+    (distance % (1000 * 60)) / 1000
+  );
 
   // DISPLAY
 
@@ -105,16 +109,6 @@ const countdown = setInterval(() => {
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("seconds").innerHTML = seconds;
 
-  // IF COUNTDOWN FINISHED
-
-  if (distance < 0) {
-    clearInterval(countdown);
-
-    document.getElementById("days").innerHTML = "00";
-    document.getElementById("hours").innerHTML = "00";
-    document.getElementById("minutes").innerHTML = "00";
-    document.getElementById("seconds").innerHTML = "00";
-  }
 }, 1000);
 
 // ================= BUTTON HOVER EFFECT =================
