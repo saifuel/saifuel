@@ -655,6 +655,16 @@ body {
     padding: 18px 0;
   }
 
+  section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .logo img {
     width: 85px;
   }
