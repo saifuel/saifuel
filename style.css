@@ -712,7 +712,7 @@ body {
 
   .products-wrapper {
     gap: 10px;
-    padding: 0 10px;
+    padding: 0;
   }
 
   .product-card img {
@@ -795,7 +795,6 @@ body {
 ========================================================= */
 
 @media (max-width: 480px) {
-
   .container {
     width: 100%;
     padding: 0 18px;
@@ -871,5 +870,4 @@ body {
     height: 42px;
     font-size: 13px;
   }
-
 }
