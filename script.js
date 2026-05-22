@@ -76,12 +76,16 @@ window.addEventListener("mousemove", (e) => {
 
 // ================= COUNTDOWN TIMER =================
 
-// SET 24 JAM DARI SEKARANG
+// SET TANGGAL CLOSE PO
+// FORMAT: YEAR, MONTH-1, DAY, HOUR, MINUTE
 
-const countdownDate = new Date().getTime() + (24 * 60 * 60 * 1000);
+const countdownDate = new Date(2026, 4, 23, 9, 0, 0).getTime();
+
+const now = new Date().getTime();
+
+const isPOOpen = now < countdownDate;
 
 const countdown = setInterval(() => {
-
   const now = new Date().getTime();
 
   const distance = countdownDate - now;
@@ -91,16 +95,12 @@ const countdown = setInterval(() => {
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
   const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
 
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) / (1000 * 60)
-  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-  const seconds = Math.floor(
-    (distance % (1000 * 60)) / 1000
-  );
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // DISPLAY
 
@@ -109,6 +109,16 @@ const countdown = setInterval(() => {
   document.getElementById("minutes").innerHTML = minutes;
   document.getElementById("seconds").innerHTML = seconds;
 
+  // IF COUNTDOWN FINISHED
+
+  if (distance < 0) {
+    clearInterval(countdown);
+
+    document.getElementById("days").innerHTML = "00";
+    document.getElementById("hours").innerHTML = "00";
+    document.getElementById("minutes").innerHTML = "00";
+    document.getElementById("seconds").innerHTML = "00";
+  }
 }, 1000);
 
 // ================= BUTTON HOVER EFFECT =================
@@ -167,17 +177,29 @@ fetch("products.json")
 
         <img src="${product.image}" alt="${product.name}" />
 
-         ${
-           product.status
-             ? `
-                  <div class="status-badge ${product.status
-                    .toLowerCase()
-                    .replace(" ", "-")}">
-                    ${product.status}
-                  </div>
-                  `
-             : ""
-         }
+        ${
+          product.status
+            ? `
+        <div class="status-badge ${
+          product.status === "COMING SOON"
+            ? "coming-soon"
+            : isPOOpen
+              ? product.status.toLowerCase().replace(" ", "-")
+              : "closed-po"
+        }">
+
+          ${
+            product.status === "COMING SOON"
+              ? "COMING SOON"
+              : isPOOpen
+                ? product.status
+                : "CLOSED PO"
+          }
+
+        </div>
+        `
+            : ""
+        }
 
         <div class="product-content">
 
@@ -215,12 +237,18 @@ fetch("products.json")
             Rp ${product.price}
           </div>
 
-          ${
-            product.status === "OPEN PO"
-              ? `
-            <a
-              href="https://wa.me/6283890272210?text=${encodeURIComponent(
-                `Halo admin Saifuel 👋
+         ${
+           product.status === "COMING SOON"
+             ? `
+          <button class="btn-product disabled-btn">
+            COMING SOON
+          </button>
+          `
+             : product.status === "OPEN PO" && isPOOpen
+               ? `
+          <a
+            href="https://wa.me/6283890272210?text=${encodeURIComponent(
+              `Halo admin Saifuel 👋
         Saya ingin order menu berikut:
 
         ━━━━━━━━━━━━━━━
@@ -235,19 +263,19 @@ fetch("products.json")
         Nama :
         Alamat :
         `,
-              )}"
-              class="btn-product"
-              target="_blank"
-            >
-              Order Now
-            </a>
-            `
-              : `
-            <button class="btn-product disabled-btn">
-              ${product.status}
-            </button>
-            `
-          }
+            )}"
+            class="btn-product"
+            target="_blank"
+          >
+            Order Now
+          </a>
+          `
+               : `
+          <button class="btn-product disabled-btn">
+            CLOSED PO
+          </button>
+          `
+         }
 
         </div>
 

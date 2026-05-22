@@ -15,7 +15,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= CONTAINER ================= */
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 .container {
   width: 90%;
@@ -23,7 +25,90 @@ body {
   margin: auto;
 }
 
-/* ================= NAVBAR ================= */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  color: #a6a300;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.section-title h2 {
+  font-size: 58px;
+  margin-top: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn-primary {
+  text-decoration: none;
+  color: black;
+  background: #a6a300;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(166, 163, 0, 0.45);
+}
+
+.btn-secondary {
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #a6a300;
+  color: #a6a300;
+}
+
+.btn-product {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  background: #a6a300;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.3s ease;
+  border: none;
+}
+
+.btn-product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(166, 163, 0, 0.35);
+}
+
+.disabled-btn {
+  background: #2a2a2a;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
   width: 100%;
@@ -63,38 +148,9 @@ body {
   color: #85a000;
 }
 
-.btn-primary {
-  text-decoration: none;
-  color: black;
-  background: #a6a300;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(166, 163, 0, 0.45);
-}
-
-.btn-secondary {
-  text-decoration: none;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.btn-secondary:hover {
-  border-color: #a6a300;
-  color: #a6a300;
-}
-
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   min-height: 100vh;
@@ -149,7 +205,6 @@ body {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-
   position: relative;
   z-index: 20;
 }
@@ -160,7 +215,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 1;
 }
 
@@ -180,71 +234,12 @@ body {
   position: absolute;
   opacity: 0.18;
   border-radius: 50%;
-
   pointer-events: none;
 }
 
-.btn-primary,
-.btn-secondary {
-  position: relative;
-  z-index: 30;
-}
-
-/* ================= RESPONSIVE HERO ================= */
-
-/* ================= RESPONSIVE HERO ================= */
-
-@media (max-width: 992px) {
-  .hero {
-    padding-top: 150px;
-    padding-bottom: 80px;
-  }
-
-  .hero-wrapper {
-    flex-direction: column;
-    text-align: center;
-    gap: 60px;
-  }
-
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .hero-text p {
-    margin: auto;
-    margin-bottom: 40px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-text h1 {
-    font-size: 58px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 40px !important;
-    line-height: 1.15;
-  }
-
-  .hero-text p {
-    font-size: 13px;
-  }
-
-  .hero-tag {
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-
-  .hero-image img {
-    max-width: 50%;
-  }
-}
-
-/* ================= COUNTDOWN SECTION ================= */
+/* =========================================================
+   COUNTDOWN
+========================================================= */
 
 .countdown-section {
   padding: 120px 0;
@@ -256,185 +251,73 @@ body {
     rgba(166, 163, 0, 0.12),
     rgba(255, 255, 255, 0.03)
   );
-
   border: 1px solid rgba(166, 163, 0, 0.15);
-
   border-radius: 35px;
-
   padding: 80px 50px;
-
   text-align: center;
-
   position: relative;
-
   overflow: hidden;
-}
-
-.countdown-wrapper::before {
-  content: "";
-
-  width: 400px;
-  height: 400px;
-
-  background: #a6a300;
-
-  position: absolute;
-
-  filter: blur(180px);
-
-  opacity: 0.08;
-
-  top: -100px;
-  right: -100px;
 }
 
 .countdown-tag {
   display: inline-block;
-
   background: rgba(166, 163, 0, 0.15);
-
   color: #a6a300;
-
   padding: 12px 22px;
-
   border-radius: 999px;
-
   font-size: 13px;
-
   letter-spacing: 2px;
-
   margin-bottom: 25px;
-
-  border: 1px solid rgba(166, 163, 0, 0.2);
 }
 
 .countdown-wrapper h2 {
   font-size: 58px;
-
   margin-bottom: 20px;
 }
 
 .countdown-wrapper p {
   color: #cfcfcf;
-
   max-width: 700px;
-
   margin: auto;
-
   line-height: 1.8;
-
   margin-bottom: 55px;
 }
 
 .countdown-timer {
   display: flex;
-
   justify-content: center;
-
   gap: 25px;
-
   flex-wrap: wrap;
-
   margin-bottom: 50px;
 }
 
 .time-box {
   width: 160px;
-
   height: 160px;
-
   background: rgba(0, 0, 0, 0.45);
-
   border: 1px solid rgba(166, 163, 0, 0.12);
-
   border-radius: 28px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   align-items: center;
-
-  backdrop-filter: blur(10px);
-
-  transition: 0.3s ease;
-}
-
-.time-box:hover {
-  transform: translateY(-8px);
-
-  border-color: rgba(166, 163, 0, 0.4);
 }
 
 .time-box h3 {
   font-size: 58px;
-
   color: #a6a300;
-
   margin-bottom: 10px;
-
   font-weight: 800;
 }
 
 .time-box span {
   color: #d9d9d9;
-
   letter-spacing: 1px;
 }
 
-/* ================= RESPONSIVE COUNTDOWN SECTION ================= */
-
-@media (max-width: 768px) {
-  .countdown-section {
-    padding: 30px 0;
-  }
-  .countdown-wrapper {
-    padding: 20px 25px;
-  }
-
-  .countdown-wrapper h2 {
-    font-size: 40px;
-  }
-
-  .time-box {
-    width: 130px;
-    height: 130px;
-  }
-
-  .time-box h3 {
-    font-size: 42px;
-  }
-}
-
-@media (max-width: 576px) {
-  .countdown-wrapper {
-    width: auto;
-  }
-  .countdown-wrapper h2 {
-    font-size: 32px;
-  }
-
-  .countdown-timer {
-    gap: 15px;
-  }
-
-  .time-box {
-    width: 80px;
-    height: 80px;
-  }
-
-  .time-box h3 {
-    font-size: 20px;
-  }
-
-  .time-box span {
-    font-size: 10px;
-  }
-}
-
-/* ================= FEATURES ================= */
+/* =========================================================
+   FEATURES
+========================================================= */
 
 .features {
   padding: 50px 0;
@@ -456,7 +339,6 @@ body {
 
 .feature-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(166, 163, 0, 0.5);
 }
 
 .feature-card i {
@@ -475,73 +357,12 @@ body {
   line-height: 1.7;
 }
 
-/* ================= RESPONSIVE FEATURES ================= */
-
-@media screen and (max-width: 768px) {
-  .features {
-    padding: 30px 0;
-  }
-
-  .features-wrapper {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .feature-card {
-    padding: 24px;
-    border-radius: 20px;
-  }
-
-  .feature-card i {
-    font-size: 28px;
-    margin-bottom: 18px;
-  }
-
-  .feature-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .feature-card p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-}
-
-/* ================= SECTION TITLE PRODUCT ================= */
-
-.section-title {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.section-title span {
-  color: #a6a300;
-
-  letter-spacing: 2px;
-
-  font-size: 14px;
-
-  font-weight: 600;
-}
-
-.section-title h2 {
-  font-size: 58px;
-
-  margin-top: 12px;
-
-  color: white;
-
-  font-weight: 800;
-}
-
-/* ===== RESPONSIVE SECTION TITLE ===== */
-
-/* ================= PRODUCTS ================= */
+/* =========================================================
+   PRODUCTS
+========================================================= */
 
 .products {
   padding: 10px 0;
-  background: #050505;
 }
 
 .products-wrapper {
@@ -550,18 +371,29 @@ body {
   gap: 30px;
 }
 
-/* ================= PRODUCT CARD ================= */
-
 .product-card {
   position: relative;
 }
 
-/* ================= STATUS BADGE ================= */
+.signature-badge,
+.bestseller-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 10;
+  background: #a6a300;
+  color: black;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
 
 .status-badge {
   display: inline-block;
-  margin-top: 12px;
-  margin-bottom: 0px;
+  margin-top: 2px;
+  margin-bottom: 0;
   padding: 7px 14px;
   border-radius: 999px;
   font-size: 10px;
@@ -570,81 +402,27 @@ body {
   color: white;
 }
 
-/* OPEN PO */
+.status-badge.coming-soon {
+  background: #3a3a3a;
+  color: #ffffff;
+}
 
 .open-po {
   background: #22c55e;
   color: black;
 }
 
-/* CLOSED PO */
-
 .closed-po {
   background: #ef4444;
 }
-
-/* COMING SOON */
 
 .coming-soon {
   background: #525252;
 }
 
-/* SOLD OUT */
-
 .sold-out {
   background: #f97316;
 }
-/* ================= RESPONSIVE MOBILE STATUS BADGE ================= */
-.status-badge {
-  display: inline-block;
-  margin-top: 2px;
-  margin-bottom: 0px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: white;
-}
-
-.signature-badge {
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  z-index: 10;
-
-  background: #a6a300;
-  color: black;
-
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-
-  padding: 8px 14px;
-  border-radius: 999px;
-
-  box-shadow: 0 10px 25px rgba(166, 163, 0, 0.25);
-}
-
-.bestseller-badge {
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  z-index: 10;
-
-  background: #a6a300;
-  color: black;
-
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-
-  padding: 8px 14px;
-  border-radius: 999px;
-
-  box-shadow: 0 10px 25px rgba(166, 163, 0, 0.25);
-}
-/* ================= IMAGE ================= */
 
 .product-card img {
   width: 100%;
@@ -655,212 +433,57 @@ body {
   display: block;
 }
 
-.product-card:hover img {
-  transform: scale(1.04);
-}
-
-/* ================= CONTENT ================= */
-
 .product-content {
   padding: 24px;
 }
 
 .product-content h3 {
-  margin-top: 0;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: white;
 }
 
 .product-protein {
   color: #a6a300;
-
   margin-bottom: 22px;
-
   font-weight: 600;
-
   font-size: 14px;
-
-  letter-spacing: 0.5px;
 }
-
-/* ================= MACRO ================= */
 
 .macro-wrapper {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 12px;
-
   margin-bottom: 28px;
 }
 
 .macro-box {
   background: rgba(166, 163, 0, 0.07);
-
   border: 1px solid rgba(166, 163, 0, 0.1);
-
   border-radius: 16px;
-
   padding: 16px;
-
-  transition: 0.3s ease;
-}
-
-.macro-box:hover {
-  background: rgba(166, 163, 0, 0.12);
-
-  border-color: rgba(166, 163, 0, 0.22);
 }
 
 .macro-box span {
   color: #cfcfcf;
-
   font-size: 12px;
-
-  letter-spacing: 0.5px;
 }
 
 .macro-box h4 {
   color: #a6a300;
-
   font-size: 24px;
-
   margin-top: 8px;
-
-  font-weight: 700;
 }
-
-/* ================= PRICE ================= */
 
 .product-price {
   font-size: 34px;
-
   font-weight: 800;
-
-  color: white;
-
   margin-bottom: 22px;
 }
 
-/* ================= BUTTON ================= */
-
-.btn-product {
-  width: 100%;
-
-  height: 52px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  text-decoration: none;
-
-  color: black;
-
-  background: #a6a300;
-
-  border-radius: 999px;
-
-  font-weight: 700;
-
-  transition: 0.3s ease;
-}
-
-.btn-product:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 0 25px rgba(166, 163, 0, 0.35);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1400px) {
-  .products-wrapper {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ================= MOBILE MENU GRID ================= */
-
-@media screen and (max-width: 768px) {
-  .products-wrapper {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-    padding: 0 10px;
-  }
-
-  .product-card {
-    overflow: hidden;
-    border-radius: 16px;
-  }
-
-  .product-card img {
-    width: 100%;
-    height: 150px !important;
-    object-fit: contain;
-    padding: 6px;
-  }
-
-  .product-content {
-    padding: 10px;
-  }
-
-  .product-content h3 {
-    font-size: 15px !important;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
-
-  .product-protein {
-    font-size: 10px;
-    margin-bottom: 10px;
-  }
-
-  .macro-wrapper {
-    gap: 6px;
-    margin-bottom: 12px;
-  }
-
-  .macro-box {
-    padding: 5px;
-    border-radius: 10px;
-  }
-
-  .macro-box span {
-    font-size: 9px;
-  }
-
-  .macro-box h4 {
-    font-size: 10px;
-    margin-top: 3px;
-  }
-
-  .product-price {
-    font-size: 15px !important;
-    margin-bottom: 10px;
-  }
-
-  .btn-product {
-    height: 30px;
-    font-size: 12px;
-  }
-
-  .signature-badge,
-  .bestseller-badge {
-    top: 8px;
-    left: 8px;
-    font-size: 8px;
-    padding: 4px 8px;
-  }
-}
-
-/* ================= ABOUT ================= */
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about {
   padding: 120px 0;
@@ -901,39 +524,9 @@ body {
   margin-bottom: 25px;
 }
 
-/* ================= RESPONSIVE ABOUT ================= */
-@media (max-width: 768px) {
-  .about-image img {
-    width: 100%;
-    max-width: 250px;
-  }
-
-  .about {
-    padding: 5px;
-  }
-
-  .about-text {
-    flex: 10;
-  }
-
-  .about-text span {
-    color: #a6a300;
-    letter-spacing: 2px;
-  }
-
-  .about-text h2 {
-    font-size: 100px;
-    margin: 20px 0;
-  }
-
-  .about-text p {
-    color: #cfcfcf;
-    line-height: 1.9;
-    margin-bottom: 25px;
-  }
-}
-
-/* ================= CONTACT ================= */
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact {
   padding: 120px 0;
@@ -955,25 +548,21 @@ body {
   color: white;
 }
 
-.contact-card:nth-child(1) i {
-  color: #25d366;
-  text-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+.contact-card i {
   margin-bottom: 20px;
   font-size: 42px;
+}
+
+.contact-card:nth-child(1) i {
+  color: #25d366;
 }
 
 .contact-card:nth-child(2) i {
   color: #e1306c;
-  text-shadow: 0 0 20px rgba(225, 48, 108, 0.5);
-  margin-bottom: 20px;
-  font-size: 42px;
 }
 
 .contact-card:nth-child(3) i {
   color: #ee4d2d;
-  text-shadow: 0 0 20px rgba(238, 77, 45, 0.5);
-  margin-bottom: 20px;
-  font-size: 42px;
 }
 
 .contact-card h3 {
@@ -985,38 +574,9 @@ body {
   color: #d0d0d0;
 }
 
-/* ===== RESPONSIVE CONTACT ===== */
-@media screen and (max-width: 768px) {
-  .contact {
-    padding: 60px 0;
-  }
-
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .contact-card {
-    padding: 28px 20px;
-    border-radius: 20px;
-  }
-
-  .contact-card i {
-    font-size: 32px !important;
-    margin-bottom: 14px !important;
-  }
-
-  .contact-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-  }
-
-  .contact-card p {
-    font-size: 14px;
-  }
-}
-
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer {
   padding: 35px 0;
@@ -1024,14 +584,10 @@ body {
   text-align: center;
   color: #cfcfcf;
 }
-@media screen and (max-width: 768px) {
-  .footer {
-    padding: 24px 16px;
-    font-size: 13px;
-    line-height: 1.7;
-  }
-}
-/* ================= FLOATING WA ================= */
+
+/* =========================================================
+   FLOATING WA
+========================================================= */
 
 .floating-wa {
   position: fixed;
@@ -1046,8 +602,6 @@ body {
   align-items: center;
   text-decoration: none;
   z-index: 999;
-  box-shadow: 0 0 30px rgba(37, 211, 102, 0.45);
-  transition: 0.3s ease;
 }
 
 .floating-wa i {
@@ -1055,68 +609,183 @@ body {
   color: white;
 }
 
-.floating-wa:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 0 40px rgba(37, 211, 102, 0.7);
-}
+/* =========================================================
+   RESPONSIVE 992px
+========================================================= */
 
-/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
 
-@media (max-width: 992px) {
   .hero-wrapper,
   .about-wrapper {
     flex-direction: column;
-  }
-
-  .hero-text {
     text-align: center;
   }
 
-  .hero-text p {
-    margin: auto;
-    margin-bottom: 35px;
+  .features-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .products-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .features-wrapper,
-  .products-wrapper,
-  .nutrition-wrapper,
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
 
   .hero-text h1 {
-    font-size: 52px;
+    font-size: 58px;
   }
 
   .section-title h2,
   .about-text h2 {
     font-size: 42px;
   }
-
-  .nav-menu {
-    display: none;
-  }
 }
 
-@media (max-width: 576px) {
-  .hero-text h1 {
-    font-size: 42px;
+/* =========================================================
+   RESPONSIVE 768px
+========================================================= */
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 18px 0;
   }
 
-  .section-title h2,
+  .logo img {
+    width: 85px;
+  }
+
+  .btn-primary {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 130px;
+    padding-bottom: 40px;
+  }
+
+  .hero-wrapper {
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+
+  .hero-text p {
+    font-size: 13px;
+  }
+
+  .hero-image img {
+    max-width: 50%;
+  }
+
+  .countdown-section,
+  .features,
+  .contact {
+    padding: 60px 0;
+  }
+
+  .countdown-wrapper {
+    padding: 25px;
+  }
+
+  .countdown-wrapper h2 {
+    font-size: 40px;
+  }
+
+  .time-box {
+    width: 90px;
+    height: 90px;
+  }
+
+  .time-box h3 {
+    font-size: 28px;
+  }
+
+  .products-wrapper {
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .product-card img {
+    height: 150px;
+    padding: 6px;
+  }
+
+  .product-content {
+    padding: 10px;
+  }
+
+  .product-content h3 {
+    font-size: 15px;
+  }
+
+  .product-price {
+    font-size: 15px;
+  }
+
+  .btn-product {
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-image img {
+    max-width: 250px;
+  }
+
   .about-text h2 {
     font-size: 34px;
   }
 
-  .product-content h3 {
-    font-size: 26px;
+  .contact-card {
+    padding: 28px 20px;
   }
 
-  .product-price {
-    font-size: 30px;
+  .floating-wa {
+    width: 55px;
+    height: 55px;
+  }
+
+  .floating-wa i {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE 576px
+========================================================= */
+
+@media screen and (max-width: 576px) {
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+  }
+
+  .time-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .time-box h3 {
+    font-size: 20px;
+  }
+
+  .time-box span {
+    font-size: 10px;
   }
 }
