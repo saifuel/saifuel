@@ -840,10 +840,6 @@ body {
     justify-content: center;
   }
 
-  .hero-image img {
-    max-width: 95%;
-  }
-
   .products-wrapper {
     gap: 18px;
     padding: 0;
