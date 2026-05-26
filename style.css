@@ -365,6 +365,24 @@ body {
   padding: 10px 0;
 }
 
+.price-wrapper {
+  margin-bottom: 22px;
+}
+
+.original-price {
+  color: #888;
+  font-size: 16px;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 34px;
+  font-weight: 800;
+  color: white;
+}
+
 .products-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

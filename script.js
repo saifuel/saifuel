@@ -233,8 +233,27 @@ fetch("products.json")
 
           </div>
 
+          ${
+            product.originalPrice && product.promoPrice
+              ? `
+          <div class="price-wrapper">
+
+            <div class="original-price">
+              Rp ${product.originalPrice}
+            </div>
+
+            <div class="product-price">
+              Rp ${product.promoPrice}
+            </div>
+
+          </div>
+          `
+              : `
           <div class="product-price">
             Rp ${product.price}
+          </div>
+          `
+          }
           </div>
 
          ${
@@ -255,7 +274,7 @@ fetch("products.json")
         🍱 Menu : ${product.name}
         💪 Protein : ${product.protein}
         🔥 Calories : ${product.calories}
-        💰 Harga : Rp ${product.price}
+        💰 Harga Promo : Rp ${product.promoPrice || product.price}
         ━━━━━━━━━━━━━━━
 
         Qty :
