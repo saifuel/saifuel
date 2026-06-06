@@ -1,5 +1,12 @@
 const waGeneral =
-  "https://wa.me/6283890272210?text=Halo%20Admin%20Saifuel%20👋%0ASaya%20ingin%20order%20menu%20high%20protein.%0ABoleh%20minta%20menu%20dan%20price%20listnya?";
+  "https://wa.me/6283890272210?text=" +
+  encodeURIComponent(`Halo Admin Saifuel 👋
+
+Saya ingin melakukan pemesanan produk Saifuel.
+
+Mohon dibantu untuk informasi menu yang tersedia, harga, dan proses pengirimannya.
+
+Terima kasih 🙏`);
 
 // ================= NAVBAR SHADOW ON SCROLL =================
 
@@ -67,19 +74,21 @@ window.addEventListener("scroll", () => {
 
 const heroImage = document.querySelector(".hero-image img");
 
-window.addEventListener("mousemove", (e) => {
-  const x = (window.innerWidth / 2 - e.pageX) / 40;
-  const y = (window.innerHeight / 2 - e.pageY) / 40;
+if (heroImage && window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("mousemove", (e) => {
+    const x = (window.innerWidth / 2 - e.pageX) / 40;
+    const y = (window.innerHeight / 2 - e.pageY) / 40;
 
-  heroImage.style.transform = `translate(${x}px, ${y}px)`;
-});
+    heroImage.style.transform = `translate(${x}px, ${y}px)`;
+  });
+}
 
 // ================= COUNTDOWN TIMER =================
 
 // SET TANGGAL CLOSE PO
 // FORMAT: YEAR, MONTH-1, DAY, HOUR, MINUTE
 
-const countdownDate = new Date(2026, 4, 23, 9, 0, 0).getTime();
+const countdownDate = new Date(2026, 5, 9, 9, 0, 0).getTime();
 
 const now = new Date().getTime();
 
@@ -311,9 +320,9 @@ const navbarOrder = document.getElementById("navbar-order");
 
 navbarOrder.href = waGeneral;
 
-const heroOrder = document.getElementById("hero-order");
+// const heroOrder = document.getElementById("hero-order");
 
-heroOrder.href = waGeneral;
+//heroOrder.href = waGeneral;
 
 const countdownOrder = document.getElementById("countdown-order");
 

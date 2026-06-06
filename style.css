@@ -500,6 +500,74 @@ body {
 }
 
 /* =========================================================
+   DELIVERY INFO
+========================================================= */
+
+.delivery-header {
+  padding: 22px 24px;
+  color: #a6a300;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.delivery-info {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(166, 163, 0, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.delivery-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.delivery-item {
+  padding: 24px;
+  text-align: center;
+}
+
+.delivery-label {
+  display: block;
+  color: #a6a300;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.delivery-item p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.delivery-item small {
+  color: #bdbdbd;
+}
+
+.delivery-divider {
+  width: 1px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.delivery-note {
+  text-align: center;
+  padding: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+/* =========================================================
    ABOUT
 ========================================================= */
 
@@ -768,6 +836,27 @@ body {
   .btn-product {
     height: 30px;
     font-size: 12px;
+  }
+
+  .delivery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-divider {
+    display: none;
+  }
+
+  .delivery-item {
+    padding: 18px;
+  }
+
+  .delivery-item p {
+    font-size: 16px;
+  }
+
+  .delivery-note {
+    font-size: 13px;
+    padding: 12px;
   }
 
   .about {
